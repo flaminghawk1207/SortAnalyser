@@ -1,0 +1,4 @@
+Iterations: 1
+Comparisons: 1
+Swaps: 1
+Time: 0.0000
