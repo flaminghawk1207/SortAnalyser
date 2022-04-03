@@ -1,14 +1,4 @@
 # Quick Sorting Algorithm
-def quickSort(array: list,start: int,end: int,analyser):
-    
-    if(analyser.comparelt(start,end)):
-        # Partitioning The Array
-        partition_val = partition(array,start,end,analyser)
-        # Quick Sorting the array indexing from start to (partition index value - 1)
-        quickSort(array,start,partition_val-1,analyser)
-        # Quick Sorting the array indexing from (partition index value + 1) to end
-        quickSort(array, partition_val+1, end,analyser)
-
 def partition(array: list,start: int,end: int,analyser):
     # Setting the pivot point
     pivot = array[end]
@@ -24,3 +14,17 @@ def partition(array: list,start: int,end: int,analyser):
     array[i+1],array[end] = analyser.swap(array[i+1],array[end])
     # Returning the partition index value
     return i+1
+
+def doQuickSort(array: list,start: int,end: int,analyser):
+    if(analyser.comparelt(start,end)):
+        # Partitioning The Array
+        partition_val = partition(array,start,end,analyser)
+        # Quick Sorting the array indexing from start to (partition index value - 1)
+        doQuickSort(array,start,partition_val-1,analyser)
+        # Quick Sorting the array indexing from (partition index value + 1) to end
+        doQuickSort(array, partition_val+1, end,analyser)
+
+def quickSort(numElements: int, array: list, analyser):
+    analyser.startTimer()
+    doQuickSort(array, 0, numElements-1, analyser)
+    analyser.endTimer()
