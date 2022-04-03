@@ -33,11 +33,7 @@ def runAnalysis(sortingFunction):
     analyser = PyAnalyser()
 
     # Call the sorting function
-    # FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
-
-    analyser.startTimer()
-    FUNCTIONS_DICT[sortingFunction](array, 0, numElements-1,analyser)
-    analyser.endTimer()
+    FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
     
     # Check if array is sorted
     assert is_sorted(array), "Output array not sorted"

@@ -1,6 +1,10 @@
 # Quick Sorting Algorithm
-def quickSort(array: list,start: int,end: int,analyser):
-    
+def quickSort(numElements: int, array: list, analyser):
+    analyser.startTimer()
+    doQuickSort(array, 0, numElements-1, analyser)
+    analyser.endTimer()
+
+def doQuickSort(array: list,start: int,end: int,analyser):
     if(analyser.comparelt(start,end)):
         # Partitioning The Array
         partition_val = partition(array,start,end,analyser)
