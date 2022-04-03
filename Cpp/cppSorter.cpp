@@ -6,6 +6,7 @@
 
 #include "cppAnalyser.cpp"
 #include "SortingAlgos/mergeSort.h"
+#include "SortingAlgos/quickSort.h"
 
 using namespace std;
 
@@ -13,8 +14,9 @@ using namespace std;
 // Key - Algorithm name, will be recognised from commandline
 // Value - Function name
 // Don't forget to import the sorting function
-map<string, function<void(vector<int> array, CppAnalyser& analyser)>> FUNCTIONS_DICT = {
-    { "mergeSort", mergeSort }
+map<string, function<void(int numElements, vector<int>& array, CppAnalyser& analyser)>> FUNCTIONS_DICT = {
+    { "mergeSort", mergeSort },
+    { "quickSort", quickSort }
 };
 
 vector<int> readArray() {
@@ -46,7 +48,7 @@ void runAnalysis(string sortingFunction) {
     CppAnalyser analyser;
 
     // Call the sorting function
-    FUNCTIONS_DICT[sortingFunction](array, analyser);
+    FUNCTIONS_DICT[sortingFunction](numElements, array, analyser);
 
     // Check if the array is sorted
     assert(is_sorted(array.begin(), array.end()));
