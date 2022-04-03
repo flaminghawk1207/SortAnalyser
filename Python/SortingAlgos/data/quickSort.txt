@@ -1,0 +1,4 @@
+Iterations: 35
+Comparisons: 50
+Swaps: 39
+Time: 0.0

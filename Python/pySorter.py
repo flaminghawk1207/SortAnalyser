@@ -3,13 +3,15 @@ import os, sys
 from pyAnalyser import PyAnalyser
 
 from SortingAlgos.mergeSort import mergeSort
+from SortingAlgos.quickSort import quickSort
 
 # To add new algorithms, add a new entry in this dictionary
 # Key - Algorithm name, will be recognised from commandline
 # Value - Function name
 # Don't forget to import the sorting function
 FUNCTIONS_DICT = {
-    "mergeSort" : mergeSort
+    "mergeSort" : mergeSort,
+    "quickSort" : quickSort
 }
 
 def readArray():
@@ -31,8 +33,12 @@ def runAnalysis(sortingFunction):
     analyser = PyAnalyser()
 
     # Call the sorting function
-    FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
+    # FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
 
+    analyser.startTimer()
+    FUNCTIONS_DICT[sortingFunction](array, 0, numElements-1,analyser)
+    analyser.endTimer()
+    
     # Check if array is sorted
     assert is_sorted(array), "Output array not sorted"
 
