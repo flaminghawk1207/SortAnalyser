@@ -1,8 +1,3 @@
-def mergeSort(numElements: int, array: list, analyser):
-    analyser.startTimer()
-    domergeSort(array,analyser)
-    analyser.endTimer()
-
 # Merge Sorting Algorithm
 def domergeSort(array: list, analyser):
     size = len(array)
@@ -46,3 +41,10 @@ def domergeSort(array: list, analyser):
             array[index] = Right[right]
             right += 1
             index += 1
+
+# Calling the merge algorithm and
+# Counting the time taken of execution
+def mergeSort(numElements: int, array: list, analyser):
+    analyser.startTimer()
+    domergeSort(array,analyser)
+    analyser.endTimer()
