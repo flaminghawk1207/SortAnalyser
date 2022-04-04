@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class CppAnalyser {
         int iterations;
         int comparisons;
         int swaps;
+        int space;
 
         clock_t start, end;
         
@@ -20,6 +22,7 @@ class CppAnalyser {
             iterations(0), 
             comparisons(0), 
             swaps(0),
+            space(0),
             start(0),
             end(0) {}
 
@@ -56,6 +59,11 @@ class CppAnalyser {
             std::swap(x, y);
         }
 
+        // Tracks the amount of space used
+        void trackSpace(vector<int>& array) {
+            space += array.size() * sizeof(int);
+        }
+
         // Writes the run data to file
         void dump(string name) {
             ofstream fout;
@@ -66,5 +74,6 @@ class CppAnalyser {
             fout<<"Swaps: "<<swaps<<endl;
             fout<<fixed<<setprecision(4);
             fout<<"Time: "<<double(end-start)/CLOCKS_PER_SEC<<endl;
+            fout<<"Space: "<<space<<endl;
         }
 };

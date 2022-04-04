@@ -26,5 +26,6 @@ def doQuickSort(array: list,start: int,end: int,analyser):
 
 def quickSort(numElements: int, array: list, analyser):
     analyser.startTimer()
+    analyser.trackSpace(array)
     doQuickSort(array, 0, numElements-1, analyser)
     analyser.endTimer()
