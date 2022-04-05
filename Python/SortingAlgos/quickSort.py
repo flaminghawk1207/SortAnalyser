@@ -1,5 +1,5 @@
 # Quick Sorting Algorithm
-def partition(array: list,start: int,end: int,analyser):
+def partition(array: list, start: int, end: int,analyser):
     # Setting the pivot point
     pivot = array[end]
     i = start-1    
@@ -15,7 +15,7 @@ def partition(array: list,start: int,end: int,analyser):
     # Returning the partition index value
     return i+1
 
-def doQuickSort(array: list,start: int,end: int,analyser):
+def doQuickSort(array: list, start: int, end: int,analyser):
     if(analyser.comparelt(start,end)):
         # Partitioning The Array
         partition_val = partition(array,start,end,analyser)

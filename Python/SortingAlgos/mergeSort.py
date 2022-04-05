@@ -1,6 +1,7 @@
 # Merge Sorting Algorithm
 def domergeSort(array: list, analyser):
     size = len(array)
+    analyser.trackSpace(array)
     if analyser.comparegt(size,1):
         # Partitioning the array into 2 Parts by the middle value
         middle = size//2
