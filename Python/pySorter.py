@@ -4,7 +4,6 @@ from pyAnalyser import PyAnalyser
 
 from SortingAlgos.mergeSort import mergeSort
 from SortingAlgos.quickSort import quickSort
-from SortingAlgos.insertionSort import insertionSort
 
 # To add new algorithms, add a new entry in this dictionary
 # Key - Algorithm name, will be recognised from commandline
@@ -12,8 +11,7 @@ from SortingAlgos.insertionSort import insertionSort
 # Don't forget to import the sorting function
 FUNCTIONS_DICT = {
     "mergeSort" : mergeSort,
-    "quickSort" : quickSort,
-    "insertionSort" : insertionSort
+    "quickSort" : quickSort
 }
 
 def readArray():
