@@ -1,3 +1,4 @@
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 import os, json
@@ -7,9 +8,9 @@ LANGS = {
     "Python" : "python pySorter.py {0}"
 }
 
-ALGORITHMS = ["quickSort"]
+ALGORITHMS = ["bubbleSort", "quickSort", "selectionSort"]
 
-INPUT_SIZES = [10**i for i in range(8)]
+INPUT_SIZES = [i for i in range(5, 10001, 3000)]
 
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 
@@ -73,9 +74,12 @@ def plotQuantity(quantity):
     for lang in LANGS:
         for algo in ALGORITHMS:
             measures = [RUN_DATA[algo][inputSize][lang][quantity] for inputSize in INPUT_SIZES]
-            plt.plot(INPUT_SIZES, measures, markersize = 25)
+            plt.plot(INPUT_SIZES, measures, markersize = 25, label=algo)
 
-        plt.savefig(os.path.join("Plots", "_".join([quantity, lang])))
+        plt.xlabel("Input Size")
+        plt.ylabel(quantity)
+        plt.legend(loc="upper left")
+        plt.savefig(os.path.join("Plots", lang, "_".join([quantity, lang])))
         plt.clf()
 
 
