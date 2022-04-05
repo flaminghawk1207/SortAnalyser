@@ -7,6 +7,7 @@
 #include "cppAnalyser.cpp"
 #include "SortingAlgos/mergeSort.h"
 #include "SortingAlgos/quickSort.h"
+#include "SortingAlgos/insertionSort.h"
 
 using namespace std;
 
@@ -16,7 +17,8 @@ using namespace std;
 // Don't forget to import the sorting function
 map<string, function<void(int numElements, vector<int>& array, CppAnalyser& analyser)>> FUNCTIONS_DICT = {
     { "mergeSort", mergeSort },
-    { "quickSort", quickSort }
+    { "quickSort", quickSort },
+    { "insertionSort", insertionSort}
 };
 
 vector<int> readArray() {
