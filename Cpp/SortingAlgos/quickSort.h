@@ -37,7 +37,7 @@ void doQuickSort(vector<int>& array, int start, int end, CppAnalyser& analyser) 
 
 void quickSort(int numElements, vector<int>& array, CppAnalyser& analyser) {
     analyser.startTimer();
-    doQuickSort(array, 0, numElements-1, analyser);
     analyser.trackSpace(array);
+    doQuickSort(array, 0, numElements-1, analyser);
     analyser.endTimer();
 }
