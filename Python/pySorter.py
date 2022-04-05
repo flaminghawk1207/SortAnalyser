@@ -2,16 +2,20 @@ from more_itertools import is_sorted
 import os, sys
 from pyAnalyser import PyAnalyser
 
+from SortingAlgos.bubbleSort import bubbleSort
 from SortingAlgos.mergeSort import mergeSort
 from SortingAlgos.quickSort import quickSort
+from SortingAlgos.selectionSort import selectionSort
 
 # To add new algorithms, add a new entry in this dictionary
 # Key - Algorithm name, will be recognised from commandline
 # Value - Function name
 # Don't forget to import the sorting function
 FUNCTIONS_DICT = {
+    "bubbleSort" : bubbleSort,
     "mergeSort" : mergeSort,
-    "quickSort" : quickSort
+    "quickSort" : quickSort,
+    "selectionSort" : selectionSort
 }
 
 def readArray():

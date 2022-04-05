@@ -1,8 +1,6 @@
 import time
 from pympler.asizeof import asizeof
 
-from numpy import size
-
 class PyAnalyser:
     def __init__(self):
         self.__iterations = 0

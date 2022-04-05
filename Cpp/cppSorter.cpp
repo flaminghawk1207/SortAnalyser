@@ -5,9 +5,11 @@
 #include <assert.h>
 
 #include "cppAnalyser.cpp"
+#include "SortingAlgos/bubbleSort.h"
+#include "SortingAlgos/insertionSort.h"
 #include "SortingAlgos/mergeSort.h"
 #include "SortingAlgos/quickSort.h"
-#include "SortingAlgos/insertionSort.h"
+#include "SortingAlgos/selectionSort.h"
 
 using namespace std;
 
@@ -16,9 +18,11 @@ using namespace std;
 // Value - Function name
 // Don't forget to import the sorting function
 map<string, function<void(int numElements, vector<int>& array, CppAnalyser& analyser)>> FUNCTIONS_DICT = {
+    { "bubbleSort", bubbleSort },
+    { "insertionSort", insertionSort },
     { "mergeSort", mergeSort },
     { "quickSort", quickSort },
-    { "insertionSort", insertionSort}
+    { "selectionSort", selectionSort }
 };
 
 vector<int> readArray() {
