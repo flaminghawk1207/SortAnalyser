@@ -8,16 +8,15 @@ void bubbleSort(int numElements, vector<int>& array, CppAnalyser& analyser)
     int min;
     for(int i=0;i<numElements;i++)
     {
-        min=i;
-        for(int j=i+1;j<numElements;j++)
+        for(int j=0;j<numElements-i-1;j++)
         {
             analyser.iterate();
-            if(analyser.comparelt(array[j],array[min]))
+            if(analyser.comparegt(array[j],array[j+1]))
             {
-                min=j;
+                analyser.swap(array[j],array[j+1]);
             }
         }
-        analyser.swap(array[i],array[min]);
+        
     }
     analyser.endTimer();
 }
