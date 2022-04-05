@@ -35,6 +35,7 @@ def runAnalysis(sortingFunction):
     # Call the sorting function
     FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
     
+    print(sortingFunction)
     # Check if array is sorted
     assert is_sorted(array), "Output array not sorted"
 

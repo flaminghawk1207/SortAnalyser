@@ -1,10 +1,14 @@
 import time
+from pympler.asizeof import asizeof
+
+from numpy import size
 
 class PyAnalyser:
     def __init__(self):
         self.__iterations = 0
         self.__comparisons = 0
         self.__swaps = 0
+        self.__space = 0
         self.__start = None
         self.__end = None
 
@@ -35,6 +39,10 @@ class PyAnalyser:
         self.__swaps += 1
         return y, x
 
+    # Tracks the amount of space used
+    def trackSpace(self, array):
+        self.__space += asizeof(array)
+
     # Writes the run data to file
     def dump(self, name):
 
@@ -43,3 +51,4 @@ class PyAnalyser:
             print(f"Comparisons: {self.__comparisons}", file=f)
             print(f"Swaps: {self.__swaps}", file=f)
             print(f"Time: {round(self.__end - self.__start, 10)}", file=f)
+            print(f"Space: {self.__space}", file=f)
