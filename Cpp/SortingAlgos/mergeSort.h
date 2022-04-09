@@ -2,11 +2,14 @@
 using namespace std;
 void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyser)
 {
+    analyser.iterate();
+
     int l=mid-start+1;
     int r=end-mid;
-    
-    int *larray=new int[l];
-    int *rarray=new int[r];
+
+    vector<int> larray(l), rarray(r);
+    analyser.trackSpace(larray);
+    analyser.trackSpace(rarray);
     
     for(int i=0;i<l;i++)
     {
@@ -22,8 +25,7 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     
     while(idxl < l && idxr < r)
     {
-        analyser.iterate();
-        if(larray[idxl] <= rarray[idxr]) //compare less than
+        if(!analyser.comparegt(larray[idxl], rarray[idxr]))
         {
             array[idxm]=larray[idxl];
             idxl++;
@@ -38,7 +40,6 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     
     while(idxl < l)
     {
-        analyser.iterate();
         array[idxm]=larray[idxl];
         idxl++;
         idxm++;
@@ -46,8 +47,7 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     
     while(idxr < r)
     {
-        analyser.iterate();
-        array[idxm]=larray[idxr];
+        array[idxm]=rarray[idxr];
         idxr++;
         idxm++;
     }

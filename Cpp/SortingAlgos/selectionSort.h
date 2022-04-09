@@ -9,10 +9,10 @@ void selectionSort(int numElements, vector<int>& array, CppAnalyser& analyser)
     int min;
     for(int i = 0; i < numElements; i++)
     {
+        analyser.iterate();
         min=i;
         for(int j = i+1;j < numElements; j++)
         {
-            analyser.iterate();
             if(analyser.comparelt(array[j], array[min]))
             {
                 min=j;

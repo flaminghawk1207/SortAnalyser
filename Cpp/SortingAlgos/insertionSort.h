@@ -19,7 +19,6 @@ void insertionSort( int numElements, vector<int>& array, CppAnalyser &analyser) 
         
         // Comparing the array elements with key value
         while ((!analyser.comparelt(j,0)) && analyser.comparegt(array[j],key)) {
-            analyser.iterate();
         
             // Shifting the array elements to one position ahead
             analyser.swap(array[j + 1], array[j]);

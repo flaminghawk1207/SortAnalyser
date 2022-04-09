@@ -1,11 +1,13 @@
 # Quick Sorting Algorithm
 def partition(array: list, start: int, end: int,analyser):
+    
+    analyser.iterate()
+
     # Setting the pivot point
     pivot = array[end]
     i = start-1    
     # Iterating the loop for Sorting
     for j in range(start,end):
-        analyser.iterate()
         if(not analyser.comparegt(array[j],pivot)):
             i+=1
             # Swaping the array elements

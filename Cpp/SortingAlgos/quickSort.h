@@ -5,12 +5,15 @@
 using namespace std;
 
 int partition(vector<int>& array, int start, int end, CppAnalyser& analyser) {
+
+    
+    analyser.iterate();
+
     // Setting the pivot point
     int pivot = array[end];
     int i = start - 1;
     // Iterating the loop for Sorting
     for(int j = start; j < end; j++) {
-        analyser.iterate();
         if(!analyser.comparegt(array[j], pivot)) {
             i++;
             // Swaping the array elements
