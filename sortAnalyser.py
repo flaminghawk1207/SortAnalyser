@@ -1,4 +1,3 @@
-from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 import os, json
@@ -8,9 +7,9 @@ LANGS = {
     "Python" : "python pySorter.py {0}"
 }
 
-ALGORITHMS = ["bubbleSort", "quickSort", "selectionSort"]
+ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort"]
 
-INPUT_SIZES = [i for i in range(5, 10001, 3000)]
+INPUT_SIZES = [i for i in range(1, 101)]
 
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 
@@ -82,10 +81,30 @@ def plotQuantity(quantity):
         plt.savefig(os.path.join("Plots", lang, "_".join([quantity, lang])))
         plt.clf()
 
+def plotBar(quantity):
+    WIDTH = 0.05
+    X = np.arange(len(INPUT_SIZES))
+    fig, ax = plt.subplots()
+    for lang in LANGS:
+        cnt = -2 # hack to get the bars aligned with xticks (num algos)/2
+        for algo in ALGORITHMS:
+            measures = [RUN_DATA[algo][inputSize][lang][quantity] for inputSize in INPUT_SIZES]
+            rects = plt.bar(X + cnt * WIDTH, measures, WIDTH, label=algo)
+            cnt += 1
+        
+        plt.xlabel("Input Size")
+        plt.ylabel(quantity)
+        plt.xticks(X, INPUT_SIZES)
+        plt.legend(loc="upper left")
+        plt.savefig(os.path.join("Bar Plots", lang, "_".join([quantity, lang])))
+        plt.clf()
+
+
 
 def plot():
     for quantity in QUANTITIES:
         plotQuantity(quantity)
+        plotBar(quantity)
 
 if __name__ == "__main__":
     runAnalysis()
