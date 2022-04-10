@@ -1,3 +1,5 @@
+//Merge Sort Algorithm
+
 #include <vector>
 using namespace std;
 void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyser)
@@ -22,7 +24,8 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     
     int idxl=0, idxr=0, idxm=start;
     
-    
+    //Comparing and Storing the array elements in a temperary array in a sorted order
+
     while(idxl < l && idxr < r)
     {
         if(!analyser.comparegt(larray[idxl], rarray[idxr]))
@@ -38,6 +41,8 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
         idxm++;
     }
     
+
+    //Storing the remaing array elements in first half in that temperary array
     while(idxl < l)
     {
         array[idxm]=larray[idxl];
@@ -45,6 +50,8 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
         idxm++;
     }
     
+
+    //Storing the remaing array elements in second half in that temperary array
     while(idxr < r)
     {
         array[idxm]=rarray[idxr];
@@ -55,14 +62,21 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
 
 void doMergeSort(vector<int>& array, int start, int end, CppAnalyser& analyser)
 {
-    if(start>=end) //compare greater
+    if(start>=end)
     {
         return;
     }
     else
     {
+
+        //Partitioning the array into 2 Parts by the middle value
+
         int mid=start + (end-start)/2;
+
+        //Merge Sortng the First half
         doMergeSort(array,start,mid, analyser);
+
+        //Merge Sortng the Second half
         doMergeSort(array,mid+1,end, analyser);
         merge(array,start,mid,end, analyser);
     }
