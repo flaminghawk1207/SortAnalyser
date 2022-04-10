@@ -38,11 +38,17 @@ def runAnalysis(sortingFunction):
     # Create analyser object
     analyser = PyAnalyser()
 
+    # print("      Array before sorting: ", end = "")
+    # print(*array)
+    
     # Call the sorting function
     FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
     
     # Check if array is sorted
     assert is_sorted(array), "Output array not sorted"
+
+    # print("      Array after sorting: ", end = "")
+    # print(*array)
 
     # Write data to file
     analyser.dump(os.path.join("SortingAlgos", "data", sortingFunction + ".txt"))

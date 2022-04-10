@@ -50,6 +50,10 @@ void runAnalysis(string sortingFunction) {
     vector<int> array = readArray();
     int numElements = array.size();
 
+    // cout<<"      Array before sorting: ";
+    // for(auto i: array) cout<<i<<" ";
+    // cout<<endl;
+
     // Create analyser object
     CppAnalyser analyser;
 
@@ -58,6 +62,10 @@ void runAnalysis(string sortingFunction) {
 
     // Check if the array is sorted
     assert(is_sorted(array.begin(), array.end()));
+
+    // cout<<"      Array after sorting: ";
+    // for(auto i: array) cout<<i<<" ";
+    // cout<<endl;
 
     // Write data to file
     // filesystem::path filePath ("SortingAlgos");
