@@ -7,5 +7,6 @@ You can play around with the different input sizes, algorithms, etc... in the `s
 **To run:**
 
 ```
+pip install -r requirements.txt
 python sortAnalyser.py
 ```
