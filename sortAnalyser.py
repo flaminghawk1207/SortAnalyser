@@ -9,7 +9,7 @@ LANGS = {
 
 ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort"]
 
-INPUT_SIZES = [i for i in range(1, 101)]
+INPUT_SIZES = [i for i in range(1, 101, 50)]
 
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 
@@ -56,17 +56,16 @@ def runAnalysis():
 
     for inputSize in INPUT_SIZES:
         generateArray(inputSize)
-        print(f"Size {inputSize}")
+        print(f"Input Size {inputSize}:")
         for algo in ALGORITHMS:
 
-            print(f"Analysing {algo}")
+            print(f"  Analysing {algo}")
             for lang in LANGS:
-                print(f"Running in {lang}")
+                print(f"    Running in {lang}", end="", flush=True)
                 execute(algo, lang)
+                print("✅")
 
         recordData(inputSize)
-
-    print(RUN_DATA)
 
 def plotQuantity(quantity):
 
