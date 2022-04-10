@@ -3,6 +3,7 @@ import os, sys
 from pyAnalyser import PyAnalyser
 
 from SortingAlgos.bubbleSort import bubbleSort
+from SortingAlgos.insertionSort import insertionSort
 from SortingAlgos.mergeSort import mergeSort
 from SortingAlgos.quickSort import quickSort
 from SortingAlgos.selectionSort import selectionSort
@@ -13,6 +14,7 @@ from SortingAlgos.selectionSort import selectionSort
 # Don't forget to import the sorting function
 FUNCTIONS_DICT = {
     "bubbleSort" : bubbleSort,
+    "insertionSort" : insertionSort,
     "mergeSort" : mergeSort,
     "quickSort" : quickSort,
     "selectionSort" : selectionSort
@@ -39,7 +41,6 @@ def runAnalysis(sortingFunction):
     # Call the sorting function
     FUNCTIONS_DICT[sortingFunction](numElements, array, analyser)
     
-    print(sortingFunction)
     # Check if array is sorted
     assert is_sorted(array), "Output array not sorted"
 

@@ -14,13 +14,13 @@ void selectionSort(int numElements, vector<int>& array, CppAnalyser& analyser)
 
     for(int i = 0; i < numElements; i++)
     {
+        analyser.iterate();
         min=i;
 
         //Traversing through the array and finding the index of the smallest array in the unsorted part
 
         for(int j = i+1;j < numElements; j++)
         {
-            analyser.iterate();
             if(analyser.comparelt(array[j], array[min]))
             {
                 min=j;

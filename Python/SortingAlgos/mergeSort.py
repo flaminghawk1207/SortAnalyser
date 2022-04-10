@@ -1,12 +1,14 @@
 # Merge Sorting Algorithm
 def domergeSort(array: list, analyser):
     size = len(array)
-    analyser.trackSpace(array)
     if analyser.comparegt(size,1):
         # Partitioning the array into 2 Parts by the middle value
         middle = size//2
         Left = array[:middle]
         Right = array[middle:]
+
+        analyser.trackSpace(Left)
+        analyser.trackSpace(Right)
 
         # Merge Sortng the First half
         domergeSort(Left,analyser)
@@ -16,6 +18,8 @@ def domergeSort(array: list, analyser):
         index = 0
         left = 0
         right = 0
+        
+        analyser.iterate()
 
         # Comparing and Storing the array elements 
         # in a temperary array in a sorted order

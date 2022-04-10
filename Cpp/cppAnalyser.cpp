@@ -72,7 +72,7 @@ class CppAnalyser {
             fout<<"Iterations: "<<iterations<<endl;
             fout<<"Comparisons: "<<comparisons<<endl;
             fout<<"Swaps: "<<swaps<<endl;
-            fout<<fixed<<setprecision(4);
+            fout<<fixed<<setprecision(10);
             fout<<"Time: "<<double(end-start)/CLOCKS_PER_SEC<<endl;
             fout<<"Space: "<<space<<endl;
         }
