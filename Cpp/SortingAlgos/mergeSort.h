@@ -4,7 +4,6 @@
 using namespace std;
 void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyser)
 {
-    analyser.iterate();
 
     int l=mid-start+1;
     int r=end-mid;
@@ -28,6 +27,7 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
 
     while(idxl < l && idxr < r)
     {
+        analyser.iterate();
         if(!analyser.comparegt(larray[idxl], rarray[idxr]))
         {
             array[idxm]=larray[idxl];
@@ -45,6 +45,7 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     //Storing the remaing array elements in first half in that temperary array
     while(idxl < l)
     {
+        analyser.iterate();
         array[idxm]=larray[idxl];
         idxl++;
         idxm++;
@@ -54,6 +55,7 @@ void merge(vector<int>& array, int start, int mid, int end, CppAnalyser& analyse
     //Storing the remaing array elements in second half in that temperary array
     while(idxr < r)
     {
+        analyser.iterate();
         array[idxm]=rarray[idxr];
         idxr++;
         idxm++;

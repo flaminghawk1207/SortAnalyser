@@ -18,8 +18,6 @@ def domergeSort(array: list, analyser):
         index = 0
         left = 0
         right = 0
-        
-        analyser.iterate()
 
         # Comparing and Storing the array elements 
         # in a temperary array in a sorted order
