@@ -1,0 +1,4 @@
+matplotlib==3.5.1
+matplotlib-inline==0.1.3
+numpy==1.19.5
+Pympler==1.0.1
