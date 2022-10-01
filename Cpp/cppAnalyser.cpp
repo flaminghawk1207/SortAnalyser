@@ -28,6 +28,7 @@ class CppAnalyser {
 
         // Starts timer (Called at beginning of sort)
         void startTimer() {
+            if(start) return;
             start = clock();
         }
 

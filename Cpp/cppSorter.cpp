@@ -10,6 +10,8 @@
 #include "SortingAlgos/mergeSort.h"
 #include "SortingAlgos/quickSort.h"
 #include "SortingAlgos/selectionSort.h"
+#include "SortingAlgos/bucketSort.h"
+#include "SortingAlgos/heapSort.h"
 
 using namespace std;
 
@@ -22,7 +24,9 @@ map<string, function<void(int numElements, vector<int>& array, CppAnalyser& anal
     { "insertionSort", insertionSort },
     { "mergeSort", mergeSort },
     { "quickSort", quickSort },
-    { "selectionSort", selectionSort }
+    { "selectionSort", selectionSort },
+    { "bucketSort", bucketSort },
+    { "heapSort", heapSort }
 };
 
 vector<int> readArray() {
@@ -66,12 +70,7 @@ void runAnalysis(string sortingFunction) {
     // cout<<"      Array after sorting: ";
     // for(auto i: array) cout<<i<<" ";
     // cout<<endl;
-
-    // Write data to file
-    // filesystem::path filePath ("SortingAlgos");
-    // filePath /= "data";
-    // filePath /= sortingFunction + ".txt";
-    // cout<<filePath.filename()<<endl;
+    
     analyser.dump("SortingAlgos/data/" + sortingFunction + ".txt");
 }
 
