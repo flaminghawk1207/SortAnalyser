@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os, json
 
 LANGS = {
-    "Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
+    #"Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
     "Python" : "python pySorter.py {0}"
 }
 

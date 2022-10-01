@@ -7,6 +7,8 @@ from SortingAlgos.insertionSort import insertionSort
 from SortingAlgos.mergeSort import mergeSort
 from SortingAlgos.quickSort import quickSort
 from SortingAlgos.selectionSort import selectionSort
+from SortingAlgos.bucketSort import bucketSort
+from SortingAlgos.heapSort import heapSort
 
 # To add new algorithms, add a new entry in this dictionary
 # Key - Algorithm name, will be recognised from commandline
@@ -17,7 +19,9 @@ FUNCTIONS_DICT = {
     "insertionSort" : insertionSort,
     "mergeSort" : mergeSort,
     "quickSort" : quickSort,
-    "selectionSort" : selectionSort
+    "selectionSort" : selectionSort,
+    "bucketSort" : bucketSort,
+    "heapSort" : heapSort
 }
 
 def readArray():
