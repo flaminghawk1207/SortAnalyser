@@ -12,6 +12,8 @@ class PyAnalyser:
 
     # Starts timer (Called at beginning of sort)
     def startTimer(self):
+        if self.__start:
+            return
         self.__start = time.time()
 
     # Stops timer (Called after sort is done)
