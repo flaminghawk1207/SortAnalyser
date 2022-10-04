@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import os, json
 
 LANGS = {
-    #"Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
+    "Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
     "Python" : "python pySorter.py {0}"
 }
 
 ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort", "bucketSort", "heapSort"]
 
-INPUT_SIZES = [i for i in range(200, 1001, 200)]
+INPUT_SIZES = [i for i in range(100, 1001, 100)]
 
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 

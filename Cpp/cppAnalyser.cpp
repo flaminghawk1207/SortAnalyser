@@ -9,10 +9,10 @@ using namespace std;
 class CppAnalyser {
     private:
 
-        int iterations;
-        int comparisons;
-        int swaps;
-        int space;
+        long long int iterations;
+        long long int comparisons;
+        long long int swaps;
+        long long int space;
 
         clock_t start, end;
         
