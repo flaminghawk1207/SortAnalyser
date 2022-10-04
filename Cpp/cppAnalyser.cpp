@@ -9,10 +9,10 @@ using namespace std;
 class CppAnalyser {
     private:
 
-        int iterations;
-        int comparisons;
-        int swaps;
-        int space;
+        long long int iterations;
+        long long int comparisons;
+        long long int swaps;
+        long long int space;
 
         clock_t start, end;
         
@@ -63,6 +63,13 @@ class CppAnalyser {
         // Tracks the amount of space used
         void trackSpace(vector<int>& array) {
             space += array.size() * sizeof(int);
+        }
+
+        // Un-Track space
+        // Used when other algos are used to sort inplace
+        // But they track space
+        void unTrackSpace(vector<int>& array) {
+            space -= array.size() * sizeof(int);
         }
 
         // Writes the run data to file

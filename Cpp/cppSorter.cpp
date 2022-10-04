@@ -9,6 +9,8 @@
 #include "SortingAlgos/insertionSort.h"
 #include "SortingAlgos/mergeSort.h"
 #include "SortingAlgos/quickSort.h"
+#include "SortingAlgos/quickSortPivotSelection.h"
+#include "SortingAlgos/quickSortInsertion.h"
 #include "SortingAlgos/selectionSort.h"
 #include "SortingAlgos/bucketSort.h"
 #include "SortingAlgos/heapSort.h"
@@ -24,6 +26,8 @@ map<string, function<void(int numElements, vector<int>& array, CppAnalyser& anal
     { "insertionSort", insertionSort },
     { "mergeSort", mergeSort },
     { "quickSort", quickSort },
+    { "quickSortPivotSelection", quickSortPivotSelection },
+    { "quickSortInsertion", quickSortInsertion },
     { "selectionSort", selectionSort },
     { "bucketSort", bucketSort },
     { "heapSort", heapSort }

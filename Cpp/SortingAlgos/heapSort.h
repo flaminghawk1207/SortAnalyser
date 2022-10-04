@@ -56,7 +56,7 @@ void heapSort(int numElements, vector<int>& array, CppAnalyser &analyser) {
     int n = array.size();
     for(int i = n - 1; i>=0; i--) {
         analyser.iterate();
-        swap(binHeap.heapList[0 + 1], binHeap.heapList[i + 1]);
+        analyser.swap(binHeap.heapList[0 + 1], binHeap.heapList[i + 1]);
         binHeap.currentSize--;
         binHeap.percDown(0+1);
     }

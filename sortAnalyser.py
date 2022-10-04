@@ -3,14 +3,25 @@ import matplotlib.pyplot as plt
 import os, json
 
 LANGS = {
-    #"Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
+    "Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
     "Python" : "python pySorter.py {0}"
 }
+ALGORITHMS = [
+    "bubbleSort",
+    "insertionSort",
+    "mergeSort",
+    "quickSort",
+    "quickSortPivotSelection",
+    "quickSortInsertion",
+    "selectionSort",
+    "bucketSort",
+    "heapSort",
+    "mergeInsertionSort",
+    "inplaceMergeSort"
 
-ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort", "bucketSort", "mergeInsertionSort","inplaceMergeSort"]
+]
 
-INPUT_SIZES = [i for i in range(200, 1001, 200)]
-
+INPUT_SIZES = [i for i in range(250, 10001, 250)]
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 
 # Dictionary with algos as key, another dictionary as value

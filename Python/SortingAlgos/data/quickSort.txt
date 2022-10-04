@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Iterations: 10798
 Comparisons: 12127
 Swaps: 6930
 Time: 0.0078248978
 Space: 37968
+=======
+Iterations: 157157
+Comparisons: 170664
+Swaps: 89339
+Time: 0.0750319958
+Space: 401200
+>>>>>>> a8f5126102080aef807f870b21316b3b24703f67

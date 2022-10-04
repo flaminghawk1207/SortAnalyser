@@ -6,6 +6,8 @@ from SortingAlgos.bubbleSort import bubbleSort
 from SortingAlgos.insertionSort import insertionSort
 from SortingAlgos.mergeSort import mergeSort
 from SortingAlgos.quickSort import quickSort
+from SortingAlgos.quickSortPivotSelection import quickSortPivotSelection
+from SortingAlgos.quickSortInsertion import quickSortInsertion
 from SortingAlgos.selectionSort import selectionSort
 from SortingAlgos.bucketSort import bucketSort
 from SortingAlgos.mergeInsertionSort import mergeInsertionSort
@@ -20,6 +22,8 @@ FUNCTIONS_DICT = {
     "insertionSort" : insertionSort,
     "mergeSort" : mergeSort,
     "quickSort" : quickSort,
+    "quickSortPivotSelection" : quickSortPivotSelection,
+    "quickSortInsertion" : quickSortInsertion,
     "selectionSort" : selectionSort,
     "bucketSort" : bucketSort,
     #"heapSort" : heapSort,
