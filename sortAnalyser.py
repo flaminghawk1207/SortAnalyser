@@ -7,7 +7,7 @@ LANGS = {
     "Python" : "python pySorter.py {0}"
 }
 
-ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort", "bucketSort", "heapSort"]
+ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort", "bucketSort", "mergeInsertionSort","inplaceMergeSort"]
 
 INPUT_SIZES = [i for i in range(200, 1001, 200)]
 
