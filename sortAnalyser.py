@@ -8,17 +8,18 @@ LANGS = {
 }
 
 ALGORITHMS = [
-    "bubbleSort",
-    "insertionSort",
-    "mergeSort",
+    # "bubbleSort",
+    # "insertionSort",
+    # "mergeSort",
     "quickSort",
     "quickSortPivotSelection",
-    "selectionSort",
-    "bucketSort",
-    "heapSort"
+    "quickSortInsertion",
+    # "selectionSort",
+    # "bucketSort",
+    # "heapSort"
 ]
 
-INPUT_SIZES = [i for i in range(100, 1001, 100)]
+INPUT_SIZES = [i for i in range(250, 10001, 250)]
 
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 

@@ -65,6 +65,13 @@ class CppAnalyser {
             space += array.size() * sizeof(int);
         }
 
+        // Un-Track space
+        // Used when other algos are used to sort inplace
+        // But they track space
+        void unTrackSpace(vector<int>& array) {
+            space -= array.size() * sizeof(int);
+        }
+
         // Writes the run data to file
         void dump(string name) {
             ofstream fout;
