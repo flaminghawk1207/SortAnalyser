@@ -18,14 +18,14 @@ from SortingAlgos.inplaceMergeSort import inplaceMergeSort
 # Value - Function name
 # Don't forget to import the sorting function
 FUNCTIONS_DICT = {
-    "bubbleSort" : bubbleSort,
-    "insertionSort" : insertionSort,
+    # "bubbleSort" : bubbleSort,
+    # "insertionSort" : insertionSort,
     "mergeSort" : mergeSort,
-    "quickSort" : quickSort,
-    "quickSortPivotSelection" : quickSortPivotSelection,
-    "quickSortInsertion" : quickSortInsertion,
-    "selectionSort" : selectionSort,
-    "bucketSort" : bucketSort,
+    # "quickSort" : quickSort,
+    # "quickSortPivotSelection" : quickSortPivotSelection,
+    # "quickSortInsertion" : quickSortInsertion,
+    # "selectionSort" : selectionSort,
+    # "bucketSort" : bucketSort,
     #"heapSort" : heapSort,
     "mergeInsertionSort" : mergeInsertionSort,
     "inplaceMergeSort" : inplaceMergeSort
