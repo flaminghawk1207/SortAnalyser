@@ -43,6 +43,12 @@ class PyAnalyser:
     def trackSpace(self, array):
         self.__space += asizeof(array)
 
+    # Un-Track space
+    # Used when other algos are used to sort inplace
+    # But they track space
+    def unTrackSpace(self, array):
+        self.__space -= asizeof(array)
+
     # Writes the run data to file
     def dump(self, name):
 

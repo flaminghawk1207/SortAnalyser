@@ -6,11 +6,22 @@ LANGS = {
     #"Cpp" : "g++ cppSorter.cpp -o cppSorter && cppSorter {0}",
     "Python" : "python pySorter.py {0}"
 }
+ALGORITHMS = [
+    # "bubbleSort",
+    # "insertionSort",
+    "mergeSort",
+    # "quickSort",
+    # "quickSortPivotSelection",
+    # "quickSortInsertion",
+    # "selectionSort",
+    # "bucketSort",
+    # "heapSort",
+    "mergeInsertionSort",
+    "inplaceMergeSort"
 
-ALGORITHMS = ["bubbleSort", "insertionSort", "mergeSort", "quickSort", "selectionSort", "bucketSort", "heapSort"]
+]
 
-INPUT_SIZES = [i for i in range(200, 1001, 200)]
-
+INPUT_SIZES = [i for i in range(1000, 5001, 1000)]
 QUANTITIES = [ "Comparisons", "Swaps", "Iterations", "Time", "Space"]
 
 # Dictionary with algos as key, another dictionary as value
